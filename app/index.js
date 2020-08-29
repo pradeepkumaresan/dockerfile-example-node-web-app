@@ -1,11 +1,17 @@
 const app = require("express")();
 const appid = process.env.APPID;
 
-app.get("/", (req,res) => 
-res.send(`appid: ${appid} home page: says hello!`))
+app.get("/", (req,res) => {
+res.send(`appid: ${appid} home page: says hello!`)
+});
 
-app.get("/app1", (req,res) => 
-res.send(`appid: ${appid} app1 page: says hello!`))
+app.get("/app1", (req,res) => {
+    console.log(req.query);
+    if(req.query.genre){
+        console.log(req.query.genre);
+    }
+res.send(`appid: ${appid} app1 page: says hello!`)
+});
  
 app.get("/app2", (req,res) => 
 res.send(`appid: ${appid} app2 page: says hello!`))
