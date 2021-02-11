@@ -1,6 +1,6 @@
 commands to start the container
 
-docker build .
+docker image build -t nodeapp .
 
 docker run -p 2222:9999 -e APPID=2222 -d nodeapp
 docker run -p 3333:9999 -e APPID=3333 -d nodeapp
